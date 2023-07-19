@@ -1,0 +1,30 @@
+{
+    "name": "ros_melodic_container",
+
+    "dockerComposeFile": "docker-compose.yml",
+
+    "build": {
+        "args": {
+            "UID": "1000",
+            "GID": "1000"
+        }
+    },
+
+    "service": "ros",
+
+    "settings": {
+        "workbench.editor.enablePreview": false,
+        "editor.minimap.enabled": false
+    },
+
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "ms-python.python",
+        "shd101wyy.markdown-preview-enhanced",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "eamodio.gitlens"        
+    ]
+}
