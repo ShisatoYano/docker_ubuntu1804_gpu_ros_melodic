@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  ros:
+    container_name: ros_melodic_gpu_container
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../ros_bag:/home/dev-user/catkin_ws/ros_bag
+    tty: true
+    network_mode: "host"
