@@ -1,5 +1,5 @@
 {
-    "name": "ros_melodic_container",
+    "name": "ros_melodic_gpu_container",
 
     "dockerComposeFile": "docker-compose.yml",
 
