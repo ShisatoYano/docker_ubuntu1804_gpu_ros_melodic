@@ -59,6 +59,3 @@ build-essential \
 
 # set user
 USER dev-user
-
-# set working directory
-WORKDIR /home/dev-user/catkin_ws
