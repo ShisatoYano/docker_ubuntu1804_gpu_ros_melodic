@@ -2,7 +2,7 @@
 FROM nvidia/opengl:base-ubuntu18.04
 
 # set as non interactive
-ARG DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # install common tools
 RUN apt update && apt install -y \
@@ -12,6 +12,7 @@ wget \
 gdb \
 curl \
 lsb-release \
+gnupg2 \
 && apt clean \ 
 && rm -rf /var/lib/apt/lists/*
 
@@ -39,6 +40,10 @@ RUN mkdir -p /home/dev-user/catkin_ws/src
 RUN cd /home/dev-user/catkin_ws && /bin/bash -c "source /opt/ros/melodic/setup.bash; catkin_make"
 RUN echo "source /home/dev-user/catkin_ws/devel/setup.bash" >> /home/dev-user/.bashrc
 RUN /bin/bash -c "source /home/dev-user/catkin_ws/devel/setup.bash"
+
+# setting to use GPU
+ENV __NV_PRIME_RENDER_OFFLOAD=1
+ENV __GLX_VENDOR_LIBRARY_NAME=nvidia
 
 # dependencies for building packages
 # initialize rosdep
