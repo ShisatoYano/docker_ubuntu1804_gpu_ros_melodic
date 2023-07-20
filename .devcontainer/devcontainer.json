@@ -26,5 +26,7 @@
         "mhutchie.git-graph",
         "donjayamanne.githistory",
         "eamodio.gitlens"        
-    ]
+    ],
+
+    "workspaceFolder": "/home/dev-user/catkin_ws"
 }
